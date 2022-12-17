@@ -1,0 +1,23 @@
+POST http://localhost:3000/notifications
+Content-type: application/json
+
+{
+  "recipientId": "{{$guid}}",
+  "content": "poiotieopt4242e",
+  "category": "n,smndasfar4242424wr"
+}
+
+###
+
+GET http://localhost:3000/notifications
+Content-type: application/json
+
+###
+
+POST http://localhost:3000/notifications
+Content-type: application/json
+
+{
+  "content": "poiotieopte",
+  "category": "n,smndasfarwr"
+}
