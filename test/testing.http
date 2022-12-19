@@ -1,4 +1,9 @@
-POST http://localhost:3000/notifications
+
+@baseUrl = http://localhost:3000
+@notifications = {{baseUrl}}/notifications
+
+# @name createNotifications
+POST {{notifications}}
 Content-type: application/json
 
 {
@@ -9,15 +14,42 @@ Content-type: application/json
 
 ###
 
-GET http://localhost:3000/notifications
-Content-type: application/json
+@notificationId = {{createNotifications.response.body.notification.$.id}}
+@recipientId = {{createNotifications.response.body.notification.$.recipientId}}
 
-###
-
-POST http://localhost:3000/notifications
+POST {{notifications}}
 Content-type: application/json
 
 {
+  "recipientId": "3fc2385a-99cf-4c2b-a1a7-bd399069ce70",
   "content": "poiotieopte",
   "category": "n,smndasfarwr"
 }
+
+###
+
+PATCH {{notifications}}/{{notificationId}}/cancel
+
+###
+
+PATCH {{notifications}}/{{notificationId}}/read
+
+###
+
+PATCH {{notifications}}/{{notificationId}}/unread
+
+###
+
+{{notifications}}/count/from/{{recipientId}}
+
+###
+
+{{notifications}}/count/from/3fc2385a-99cf-4c2b-a1a7-bd399069ce70
+
+###
+
+{{notifications}}/from/{{recipientId}}
+
+###
+
+{{notifications}}/from/3fc2385a-99cf-4c2b-a1a7-bd399069ce70
