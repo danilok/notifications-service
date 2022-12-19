@@ -30,6 +30,13 @@ git clone <project>
 # install dependencies
 npm install
 
+# configure .env file 
+# or 
+# copy .env.example to .env
+
+# load environment variables with prisma
+npx prisma generate
+
 # run migrations
 npx prisma migrate deploy
 
@@ -39,6 +46,14 @@ npm run start:dev
 # execute requests from testing.http under test folder using REST Client VS Code extension
 ```
 
+<br>
+
+# ⚙️ Configuration
+## Environment variables
+
+```
+DATABASE_URL="file:./dev.db"
+```
 <br>
 
  # 🚦 Tests
